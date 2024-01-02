@@ -21,13 +21,21 @@ body {
   box-sizing: border-box;
 }
 
+/* Navbar */
+
 .navbar {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #333;
   color: white;
   padding: 1rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column-reverse;
 }
 
 .logo {
@@ -37,7 +45,9 @@ body {
   padding-right: 40px;
 }
 
-.navbar ul li::before {
+
+
+.navbar ul li a::before {
   content: '';
   position: absolute;
   bottom: 0;
@@ -48,23 +58,29 @@ body {
   right: 0;
 }
 
-.navbar ul li:hover:before {
+.navbar ul li a:hover:before {
   left: 0;
   width: 100%;
 }
 
-.navbar ul li {
+.navbar ul.visible {
+  display: block;
+}
+
+
+.navbar ul li a {
   position: relative;
-  padding-bottom: 0.75rem;
+  padding-bottom: 7px;
   overflow: hidden;
 }
 
-.navbar ul li:hover a {
+.navbar ul li a:hover {
   color: var(--hover-color)
 }
 
 .logo img {
   max-width: 100%;
+  width: 100px;
 }
 
 ul {
@@ -81,9 +97,57 @@ a {
   color: white;
 }
 
+.burger-menu {
+  position: relative;
+  height: 18px;
+  width: 20px;
+  cursor: pointer;
+  display: none;
+  left: 20px;
+  margin-left: 20px;
+}
+
+.burger-menu span {
+  position: absolute;
+  height: 2px;
+  background: #fff;
+  left: 0;
+  transition: 0.4s;
+}
+
+.burger-menu span:nth-child(1) {
+  top: 0;
+  width: 100%;
+}
+
+.burger-menu span:nth-child(2) {
+  top: 50%;
+  width: 100%;
+}
+
+.burger-menu span:nth-child(3) {
+  bottom: 0;
+  width: 100%;
+}
+
+.burger-menu.close span:nth-child(1) {
+  top: 50%;
+  transform: rotate(45deg);
+}
+
+.burger-menu.close span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger-menu.close span:nth-child(3) {
+  top: 50%;
+  transform: rotate(-45deg);
+}
+
 .section {
   padding: 50px 0;
   text-align: center;
+  height: 500px;
 }
 
 hr {
@@ -138,4 +202,38 @@ hr {
 
 .join-button:hover {
   background-color: #333;
+}
+
+
+
+/* media */
+@media (width < 700px) {
+  .burger-menu {
+    display: block;
+  }
+  .navbar ul {
+    position: absolute;
+    left: 0;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    top: -153%;
+    background-color: #333;
+    width: 100%;
+    padding: 1rem 0;
+    border-radius: 0 0 10px 10px;
+    transition: 0.4s;
+    display: flex;
+    justify-content: space-between;
+    height: fit-content;
+  }
+
+  .navbar ul li {
+    margin: 10px 0;
+  }
+
+  .navbar:has(.burger-menu.close) ul {
+    top: 87%;
+    border-top: 1px solid #fff;
+  }
 }
