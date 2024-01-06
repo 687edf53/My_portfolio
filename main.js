@@ -16,7 +16,8 @@ function bugerMenuFuncClose() {
 }
 
 navbarLinks.childNodes.forEach((link) =>
-    link.addEventListener("click", bugerMenuFuncClose));
+  link.addEventListener("click", bugerMenuFuncClose)
+);
 burgerMenu.addEventListener("click", bugerMenuFunc);
 sections.forEach((section) => {
   section.addEventListener("click", bugerMenuFuncClose);
