@@ -226,15 +226,15 @@ hr {
   padding-top: 50px;
 }
 
-#home .content > img {
+#home .content>img {
   width: 300px;
 }
 
 #home .content .skills .skills-imgs {
   display: flex;
   justify-content: center;
-  padding-top: 15px; 
-  margin-left: -10px; 
+  padding-top: 15px;
+  margin-left: -10px;
 }
 
 #home .content .skills .skills-imgs img {
@@ -243,6 +243,7 @@ hr {
 
 #home .content .skills .skills-imgs .container-js {
   position: relative;
+  z-index: -1;
 }
 
 #home .content .skills .skills-imgs .container-js::before {
@@ -280,6 +281,7 @@ hr {
     padding: 1rem 0;
     border-radius: 0 0 10px 10px;
     transition: 0.4s;
+    z-index: 10;
   }
 
   .navbar ul li {
@@ -307,7 +309,7 @@ hr {
     gap: 8rem;
   }
 
-  #home .content > img {
+  #home .content>img {
     margin-right: -50px;
   }
 
