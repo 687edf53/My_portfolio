@@ -281,13 +281,17 @@ hr {
   box-shadow: 0 0 50px blue, 0 0 100px blue, 0 0 150px blue, 0 0 200px 10px blue,
     0 0 250px 20px blue;
   filter: blur(10px);
-  right: 330px;
+  left: 50%;
+  top: 5px;
+  transform: translateX(-50%);
   margin-top: 30px;
   z-index: -5;
 }
 
 #home .content h1 {
   animation: updown infinite 1s ease-in-out alternate;
+  position: relative;
+  width: fit-content;
 }
 
 /* Media Query */
