@@ -336,10 +336,6 @@ hr {
     margin-top: 2rem;
   }
 
-  #home .content>img {
-    margin-right: -50px;
-  }
-
   .blur {
     right: 45%;
     transform: translateX(-50%);
@@ -351,7 +347,8 @@ hr {
   0% {
     transform: translateY(-10px);
   }
+
   100% {
-    transform: translateY(5px);  
+    transform: translateY(5px);
   }
 }
