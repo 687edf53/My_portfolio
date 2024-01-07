@@ -275,11 +275,12 @@ hr {
 
 .blur {
   position: absolute;
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
+  background: #0000ff20;
   box-shadow: 0 0 50px blue, 0 0 100px blue, 0 0 150px blue, 0 0 200px 10px blue,
-    0 0 250px 20px blue;
+    0 0 250px 10px blue;
   filter: blur(10px);
   left: 50%;
   top: 5px;
@@ -289,9 +290,12 @@ hr {
 }
 
 #home .content h1 {
-  animation: updown infinite 1s ease-in-out alternate;
   position: relative;
   width: fit-content;
+}
+
+#home .content h1,.blur {
+  animation: updown infinite 1s ease-in-out alternate;
 }
 
 /* Media Query */
