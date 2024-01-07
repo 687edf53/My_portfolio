@@ -2,7 +2,8 @@
 const burgerMenu = document.querySelector(".burger-menu"),
   navbarLinks = document.querySelector(".navbar ul"),
   navbar = document.querySelector(".navbar"),
-  sections = document.querySelectorAll("section");
+  sections = document.querySelectorAll("section"),
+  aboutMe = document.querySelector("#home .content h1");
 
 // Navbar
 function bugerMenuFunc() {
@@ -22,3 +23,5 @@ burgerMenu.addEventListener("click", bugerMenuFunc);
 sections.forEach((section) => {
   section.addEventListener("click", bugerMenuFuncClose);
 });
+
+// Home section

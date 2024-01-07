@@ -223,10 +223,12 @@ hr {
   justify-content: space-evenly;
   flex-direction: row-reverse;
   padding-top: 50px;
+  position: relative;
 }
 
 #home .content>img {
   width: 300px;
+  margin-top: -50px;
 }
 
 #home .content .skills .skills-imgs {
@@ -259,6 +261,32 @@ hr {
 #home .content h4 {
   width: 200px;
   font-size: 20px;
+}
+
+#home>h1:first-child {
+  font-size: 35px;
+}
+
+.name {
+  font-size: 30px;
+  color: transparent;
+  -webkit-text-stroke: 2px var(--primary-color);
+}
+
+.blur {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  box-shadow: 0 0 50px blue, 0 0 100px blue, 0 0 150px blue, 0 0 200px 10px blue,
+    0 0 250px 20px blue;
+  filter: blur(10px);
+  right: 330px;
+  margin-top: 30px;
+}
+
+#home .content h1 {
+  animation: updown infinite 1s ease-in-out alternate;
 }
 
 /* Media Query */
@@ -305,10 +333,25 @@ hr {
     align-items: center;
     justify-content: space-between;
     gap: 8rem;
+    margin-top: 2rem;
   }
 
   #home .content>img {
     margin-right: -50px;
   }
 
+  .blur {
+    right: 45%;
+    transform: translateX(-50%);
+  }
+
+}
+
+@keyframes updown {
+  0% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(5px);  
+  }
 }
