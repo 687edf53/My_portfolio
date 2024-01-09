@@ -32,11 +32,12 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #272727de;
+  background-color: #272727d2;
   color: white;
   padding: 1rem;
   transition: background-color 0.4s;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
 }
 
 .container {
@@ -66,7 +67,7 @@ body {
   left: 0;
   width: 100%;
   height: 2px;
-  background: #333;
+  background: var(--primary-color);
   transform: scaleX(0);
   transform-origin: right;
   transition: transform 0.4s ease-in-out;
@@ -79,10 +80,6 @@ body {
 
 .navbar ul.visible {
   display: flex;
-}
-
-.navbar ul li a:hover {
-  color: var(--primary-color);
 }
 
 .logo img {
@@ -151,6 +148,8 @@ li {
 .section {
   padding: 50px 0;
   text-align: center;
+  width: 80vw;
+  margin: 0 auto;
 }
 
 hr {
@@ -220,10 +219,61 @@ hr {
 
 #home .content {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  align-items: center;
   flex-direction: row-reverse;
   padding-top: 50px;
   position: relative;
+}
+
+#home .content .text {
+  text-align: right;
+  margin-top: -35px;
+}
+
+#home .content .text .buttons {
+  display: flex;
+  flex-direction: row-reverse;
+  width: fit-content;
+  gap: 1rem;
+  text-align: right;
+  margin-left: auto;
+  margin-top: 20px;
+}
+
+#home .content .text .buttons a {
+  padding: 5px 8px;
+  background: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  transition: 0.2s;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+#home .content .text .buttons a:last-child:hover {
+  background-color: transparent;
+  border-color: var(--primary-color);
+}
+
+#home .content .text .buttons a:first-child {
+  background-color: transparent;
+  border-color: var(--primary-color);
+}
+
+#home .content .text .buttons a:first-child:hover {
+  background: var(--primary-color)
+}
+
+
+
+#home .content .text h1,
+.name {
+  font-size: 50px !important;
+}
+
+#home .content .text h3 {
+  font-size: 35px;
 }
 
 #home .content>img {
@@ -268,7 +318,6 @@ hr {
 }
 
 .name {
-  font-size: 30px;
   color: transparent;
   -webkit-text-stroke: 2px var(--primary-color);
 }
@@ -278,7 +327,7 @@ hr {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background: #0000ff43;
+  background: #0000ff5e;
   box-shadow: 0 0 50px blue, 0 0 100px blue, 0 0 150px blue, 0 0 200px 10px blue,
     0 0 250px 10px blue;
   filter: blur(10px);
@@ -291,11 +340,10 @@ hr {
 
 #home .content h1 {
   position: relative;
-  width: fit-content;
 }
 
-#home .content h1,.blur {
-  animation: updown infinite 1s ease-in-out alternate;
+#home .content img {
+  animation: updown infinite 1.5s ease-in-out alternate;
 }
 
 /* Media Query */
@@ -356,7 +404,7 @@ hr {
     padding: 0;
   }
 
-  .blur {
+  #home .content img {
     right: 45%;
     transform: translateX(-50%);
   }
